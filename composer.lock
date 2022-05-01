@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9267948a1dacd379c3e9eca0252ca29",
+    "content-hash": "411e4dca31563542b484b11c703dc10f",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1818,6 +1818,84 @@
                 "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
             "time": "2021-05-03T11:20:27+00:00"
+        },
+        {
+            "name": "sensio/framework-extra-bundle",
+            "version": "v6.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
+                "reference": "6bd976c99ef3f78e31c9490a10ba6dd8901076eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/6bd976c99ef3f78e31c9490a10ba6dd8901076eb",
+                "reference": "6bd976c99ef3f78e31c9490a10ba6dd8901076eb",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.0",
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4|^5.0|^6.0",
+                "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+                "symfony/framework-bundle": "^4.4|^5.0|^6.0",
+                "symfony/http-kernel": "^4.4|^5.0|^6.0"
+            },
+            "conflict": {
+                "doctrine/doctrine-cache-bundle": "<1.3.1",
+                "doctrine/persistence": "<1.3"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.10|^3.0",
+                "doctrine/doctrine-bundle": "^1.11|^2.0",
+                "doctrine/orm": "^2.5",
+                "symfony/browser-kit": "^4.4|^5.0|^6.0",
+                "symfony/doctrine-bridge": "^4.4|^5.0|^6.0",
+                "symfony/dom-crawler": "^4.4|^5.0|^6.0",
+                "symfony/expression-language": "^4.4|^5.0|^6.0",
+                "symfony/finder": "^4.4|^5.0|^6.0",
+                "symfony/monolog-bridge": "^4.0|^5.0|^6.0",
+                "symfony/monolog-bundle": "^3.2",
+                "symfony/phpunit-bridge": "^4.4.9|^5.0.9|^6.0",
+                "symfony/security-bundle": "^4.4|^5.0|^6.0",
+                "symfony/twig-bundle": "^4.4|^5.0|^6.0",
+                "symfony/yaml": "^4.4|^5.0|^6.0",
+                "twig/twig": "^1.34|^2.4|^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sensio\\Bundle\\FrameworkExtraBundle\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "/tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "This bundle provides a way to configure your controllers with annotations",
+            "keywords": [
+                "annotations",
+                "controllers"
+            ],
+            "support": {
+                "issues": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/issues",
+                "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.2.6"
+            },
+            "time": "2022-01-14T11:51:13+00:00"
         },
         {
             "name": "symfony/cache",
@@ -4607,6 +4685,165 @@
             "time": "2022-04-12T15:19:55+00:00"
         },
         {
+            "name": "symfony/security-core",
+            "version": "v4.4.41",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/security-core.git",
+                "reference": "254b083d923592383f42c45611d235b04e27749d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/security-core/zipball/254b083d923592383f42c45611d235b04e27749d",
+                "reference": "254b083d923592383f42c45611d235b04e27749d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/event-dispatcher-contracts": "^1.1|^2",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/service-contracts": "^1.1.6|^2"
+            },
+            "conflict": {
+                "symfony/event-dispatcher": "<4.3|>=5",
+                "symfony/ldap": "<4.4",
+                "symfony/security-guard": "<4.3"
+            },
+            "require-dev": {
+                "psr/container": "^1.0|^2.0",
+                "psr/log": "^1|^2|^3",
+                "symfony/event-dispatcher": "^4.3",
+                "symfony/expression-language": "^3.4|^4.0|^5.0",
+                "symfony/http-foundation": "^3.4|^4.0|^5.0",
+                "symfony/ldap": "^4.4|^5.0",
+                "symfony/translation": "^4.4|^5.0",
+                "symfony/validator": "^3.4.31|^4.3.4|^5.0"
+            },
+            "suggest": {
+                "psr/container-implementation": "To instantiate the Security class",
+                "symfony/event-dispatcher": "",
+                "symfony/expression-language": "For using the expression voter",
+                "symfony/http-foundation": "",
+                "symfony/ldap": "For using LDAP integration",
+                "symfony/validator": "For using the user password constraint"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Security\\Core\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Security Component - Core Library",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/security-core/tree/v4.4.41"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-14T15:50:15+00:00"
+        },
+        {
+            "name": "symfony/security-csrf",
+            "version": "v4.4.37",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/security-csrf.git",
+                "reference": "45c956ef58135091f53732646a0acd28034f02c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/security-csrf/zipball/45c956ef58135091f53732646a0acd28034f02c0",
+                "reference": "45c956ef58135091f53732646a0acd28034f02c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/security-core": "^3.4|^4.0|^5.0"
+            },
+            "conflict": {
+                "symfony/http-foundation": "<3.4"
+            },
+            "require-dev": {
+                "symfony/http-foundation": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "symfony/http-foundation": "For using the class SessionTokenStorage."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Security\\Csrf\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Security Component - CSRF Library",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/security-csrf/tree/v4.4.37"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-02T09:41:36+00:00"
+        },
+        {
             "name": "symfony/service-contracts",
             "version": "v2.5.1",
             "source": {
@@ -5033,6 +5270,112 @@
                 }
             ],
             "time": "2022-04-12T15:19:55+00:00"
+        },
+        {
+            "name": "symfony/validator",
+            "version": "v4.4.41",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/validator.git",
+                "reference": "b79a7830b8ead3fb0a2a0080ba6f5b2a0861c28c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/b79a7830b8ead3fb0a2a0080ba6f5b2a0861c28c",
+                "reference": "b79a7830b8ead3fb0a2a0080ba6f5b2a0861c28c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/translation-contracts": "^1.1|^2"
+            },
+            "conflict": {
+                "doctrine/lexer": "<1.1",
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/http-kernel": "<4.4",
+                "symfony/intl": "<4.3",
+                "symfony/translation": ">=5.0",
+                "symfony/yaml": "<3.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.10.4",
+                "doctrine/cache": "^1.0|^2.0",
+                "egulias/email-validator": "^2.1.10|^3",
+                "symfony/cache": "^3.4|^4.0|^5.0",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/expression-language": "^3.4|^4.0|^5.0",
+                "symfony/http-client": "^4.3|^5.0",
+                "symfony/http-foundation": "^4.1|^5.0",
+                "symfony/http-kernel": "^4.4",
+                "symfony/intl": "^4.3|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/property-access": "^3.4|^4.0|^5.0",
+                "symfony/property-info": "^3.4|^4.0|^5.0",
+                "symfony/translation": "^4.2",
+                "symfony/yaml": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
+                "doctrine/cache": "For using the default cached annotation reader.",
+                "egulias/email-validator": "Strict (RFC compliant) email validation",
+                "psr/cache-implementation": "For using the mapping cache.",
+                "symfony/config": "",
+                "symfony/expression-language": "For using the Expression validator",
+                "symfony/http-foundation": "",
+                "symfony/intl": "",
+                "symfony/property-access": "For accessing properties within comparison constraints",
+                "symfony/property-info": "To automatically add NotNull and Type constraints",
+                "symfony/translation": "For translating validation errors.",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Validator\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools to validate values",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/validator/tree/v4.4.41"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-14T15:50:15+00:00"
         },
         {
             "name": "symfony/var-dumper",
