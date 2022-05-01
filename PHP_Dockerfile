@@ -1,0 +1,50 @@
+FROM php:7.4-fpm
+
+RUN apt update \
+    && apt install -y zlib1g-dev g++ git libicu-dev zip libzip-dev zip \
+    && docker-php-ext-install intl opcache pdo pdo_mysql \
+    && pecl install apcu \
+    && docker-php-ext-enable apcu \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install zip
+
+# editors
+RUN apt-get update \
+    && apt-get install -q -y nano vim
+#---------
+
+# addition programs
+RUN apt-get update && \
+  apt-get install -y zip mariadb-client git
+# Git config
+RUN git config --global user.email "************" \
+    && git config --global user.name "************"
+
+# time
+ENV TZ=Asia/Jerusalem
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+WORKDIR /var/www/devbooks
+
+EXPOSE 9000
+
+# users. fix files permissions collision. same users as host
+RUN usermod -u 33 www-data
+RUN groupadd -g 1000 bzl
+RUN adduser bzl --system --ingroup www-data --uid 1000
+RUN chown bzl /var/www/devbooks -R
+
+# Composer install
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Symfony installer
+RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list \
+    && apt update \
+    && apt install symfony-cli
+
+# Make new project
+# RUN symfony new app --version=4.4
+# RUN composer require symfony/orm-pack
+# RUN composer require --dev symfony/maker-bundle:1.25.0
+# RUN composer require symfony/twig-bundle
+# RUN composer require symfony/form

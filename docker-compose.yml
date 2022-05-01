@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  symfony_php:
+    container_name: dock_symfony_php
+    build:
+      context: .
+      dockerfile: ./PHP_Dockerfile
+    ports:
+      - '9010:9000'
+    volumes:
+      - ./:/var/www/devbooks
