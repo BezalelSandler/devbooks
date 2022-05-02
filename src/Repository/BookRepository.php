@@ -22,7 +22,7 @@ class BookRepository extends ServiceEntityRepository
     // /**
     //  * @return Book[] Returns an array of Book objects with Authors array
     //  */
-    public function getBooksWithAuthors(){
+    public function getBooksWithAuthors($more_than=0){
         // RAW sql query
         $conn = $this->getEntityManager()->getConnection(); 
         $books = $this->findAll();
@@ -30,10 +30,17 @@ class BookRepository extends ServiceEntityRepository
             $sql = "SELECT a.id, a.name  FROM author a 
                 INNER JOIN book_author ba ON ba.author_id = a.id  
                 INNER JOIN book b ON ba.book_id = b.id 
-                WHERE b.id = '{$book->getId()}'";
+                WHERE b.id = '{$book->getId()}'
+                    AND (SELECT count(author_id) 
+                		FROM book_author WHERE book_id = b.id) > $more_than;";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
-            $books[$key]->authors = $stmt->fetchAll();
+            $authors = $stmt->fetchAll();
+            if ($authors) {
+                $books[$key]->authors = $authors;
+            } else {
+                unset($books[$key]);
+            }
         }
         return $books;
     }

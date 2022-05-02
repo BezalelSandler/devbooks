@@ -7,6 +7,7 @@
 
     <a href="{{ path('book_new') }}" class="btn btn-primary">Create new</a>
     <a href="/authors" class="btn btn-secondary">Authors</a>
+    <a href="{{ path('book_index') }}?more_than=2" class="btn btn-link">Show more than 2 authors</a>
 
     <table class="table">
         <thead>
@@ -27,7 +28,7 @@
                 <td>{{ book.Title }}</td>
                 <td>
                 {% for author in book.authors %}
-                    <a href="{{ path('author_show', {id: author.id}) }}"> {{ author.name }} </a>
+                    <a href="{{ path('author_show', {id: author.id}) }}"> {{ author.name }}</a>,
                 {% endfor %}    
                 </td>
                 <td>{{ book.Description }}</td>
