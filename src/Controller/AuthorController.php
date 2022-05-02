@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/author")
+ * @Route("/authors")
  */
 class AuthorController extends AbstractController
 {
@@ -90,5 +90,15 @@ class AuthorController extends AbstractController
         }
 
         return $this->redirectToRoute('author_index');
+    }
+
+    /**
+     * @Route("/new_fakes", name="author_new_fakes", methods={"GET"})
+     */
+    public function new_fakes()
+    {
+        $faker = Faker\Factory::create();
+
+        //return $this->render("Hello");
     }
 }

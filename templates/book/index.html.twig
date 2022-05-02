@@ -1,15 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Book index{% endblock %}
+{% block title %}Books index{% endblock %}
 
 {% block body %}
-    <h1>Book index</h1>
+    <h1>Books index</h1>
+
+    <a href="{{ path('book_new') }}" class="btn btn-primary">Create new</a>
+    <a href="/authors" class="btn btn-secondary">Authors</a>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Authors</th>
                 <th>Description</th>
                 <th>Cover</th>
                 <th>Pub_Date</th>
@@ -21,8 +25,13 @@
             <tr>
                 <td>{{ book.id }}</td>
                 <td>{{ book.Title }}</td>
+                <td>
+                {% for author in book.authors %}
+                    <a href="{{ path('author_show', {id: author.id}) }}"> {{ author.name }} </a>
+                {% endfor %}    
+                </td>
                 <td>{{ book.Description }}</td>
-                <td>{{ book.Cover }}</td>
+                <td><img src="{{ book.Cover }}" /></td>
                 <td>{{ book.PubDate ? book.PubDate|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
@@ -36,6 +45,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('book_new') }}">Create new</a>
 {% endblock %}

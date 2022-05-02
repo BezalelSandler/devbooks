@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/book")
+ * @Route("/books")
  */
 class BookController extends AbstractController
 {
@@ -21,7 +21,8 @@ class BookController extends AbstractController
     public function index(BookRepository $bookRepository): Response
     {
         return $this->render('book/index.html.twig', [
-            'books' => $bookRepository->findAll(),
+            'books' => $bookRepository->getBooksWithAuthors(),
+            //'books' => $bookRepository->getAuthors(),
         ]);
     }
 
