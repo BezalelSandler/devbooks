@@ -23,7 +23,7 @@ class BookController extends AbstractController
         //$more_than = (int) $this->getParameter('more_than');
         //var_dump($more_than);
         //$request = new Request;
-        $more_than = $request->query->get('more_than') ?: 0;
+        $more_than = (int)$request->query->get('more_than') ?: 0;
         return $this->render('book/index.html.twig', [
             'books' => $bookRepository->getBooksWithAuthors($more_than),
             //'books' => $bookRepository->getAuthors(),
